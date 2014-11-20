@@ -13,7 +13,8 @@ class ToysController < ApplicationController
   end
 
   def create
-    @toy = Toy.new(params.require(:toy).permit(:name))
+    debugger
+    @toy = Toy.new(params.require(:toy).permit(:name, :cat_id))
     @toy.save
     redirect_to toys_path
   end
